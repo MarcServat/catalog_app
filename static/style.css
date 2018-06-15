@@ -1,0 +1,38 @@
+body {
+    font-family: Helvetica, Arial, Sans-Serif;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;    
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 12px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.categories {
+    margin: 0px 30px;
+    width: auto;
+}
+
+.items {
+    width: 100%;
+    margin: 0px 30px;
+}
+
+.add-item {
+    font-size: 15px;
+    margin-left: 10px;
+}

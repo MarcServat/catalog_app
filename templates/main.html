@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% block content %}
+{% include 'header.html' %}
+<div class="row">
+    <div class="col s12">
+        <div class="z-depth-5 card-panel">
+                <main class="list">
+                    <aside class="categories">
+                        <h4 class="grey-text text-darken-2">Categories</h4>
+                        {% for category in categories %}
+                        <ul>
+                            <li>
+                                <a class="create-link" href="{{url_for('listItem',
+                                    category_name=category.name)}}">{{ category.name }}
+                                </a>
+                            </li>
+                        </ul>
+                        {% endfor %}
+                    </aside>
+                    <hr>
+                    <section class="items">
+                    <h4 class="grey-text text-darken-2">Latest Items
+                        {% if 'username' in session %}
+                            <span class="add-item">
+                                <a href="{{url_for('createCatalogItem')}}">Add item</a>
+                            </span>
+                        {% endif %}
+                    </h4>
+                        {% for item in items %}
+                            {% for category in categories %}
+                                {% if category.id == item.category_id %}
+                                    <p>
+                                        <a href="{{url_for('itemDescription',
+                                            category_name=category.name,
+                                            item_title=item.title)}}">{{ item.title }}</a>
+                                            ({{ category.name }})
+                                    </p>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </section>
+                </main>
+        </div>
+    </div>
+</div>
+{% include 'fnlogin.html' %}
+{% endblock %}
