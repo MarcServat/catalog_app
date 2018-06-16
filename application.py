@@ -11,6 +11,7 @@ import httplib2
 import json
 from flask import make_response
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -303,6 +304,10 @@ def catalogJSON():
 
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
+    server_address = ('', port)
+    httpd = http.server.HTTPServer(server_address, Shortener)
+    httpd.serve_forever()
     app.secret_key = 'secret_key'
     app.debug = True
     app.run(host='0.0.0.0', port=5000)
