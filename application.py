@@ -305,7 +305,7 @@ def catalogJSON():
 
 
 if __name__ == '__main__':
-    server_class = BaseHTTPServer.HTTPServer,
+    server_class = BaseHTTPServer.HTTPServer
     handler_class = BaseHTTPServer.BaseHTTPRequestHandler
     port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
     server_address = ('', port)
