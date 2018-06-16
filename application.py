@@ -12,7 +12,7 @@ import json
 from flask import make_response
 import requests
 import os
-from BaseHTTPServer import BaseHTTPRequestHandler
+import BaseHTTPServer
 
 app = Flask(__name__)
 
