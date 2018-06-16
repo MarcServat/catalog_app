@@ -34,11 +34,6 @@ PyJWT==1.6.1
 pylint==1.8.2
 pyOpenSSL==17.5.0
 pyserial==3.0.1
-python-apt==1.1.0b1+ubuntu0.16.4.1
-python-dateutil==2.6.1
-python-debian==0.1.27
-pytz==2018.3
-pyxdg==0.25
 PyYAML==3.12
 requests==2.18.4
 rsa==3.4.2
