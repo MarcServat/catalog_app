@@ -167,7 +167,7 @@ def gdisconnect():
         return response
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
     # make a state for a login session
     state = ''.join(random.choice(string.ascii_uppercase + string.digits)
