@@ -20,7 +20,6 @@ httplib2==0.9.1
 ipaddress==1.0.19
 itsdangerous==0.24
 Jinja2==2.10
-jmespath==0.9.3
 oauthlib==1.0.3
 pep8==1.7.1
 psycopg2==2.7.4
