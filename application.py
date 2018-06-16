@@ -12,7 +12,7 @@ import json
 from flask import make_response
 import requests
 import os
-import http.server
+from BaseHTTPServer import BaseHTTPRequestHandler
 
 app = Flask(__name__)
 
@@ -305,9 +305,11 @@ def catalogJSON():
 
 
 if __name__ == '__main__':
+    server_class = BaseHTTPServer.HTTPServer,
+    handler_class = BaseHTTPServer.BaseHTTPRequestHandler
     port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
     server_address = ('', port)
-    httpd = http.server.HTTPServer(server_address, Shortener)
+    httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
     # app.secret_key = 'secret_key'
     # app.debug = True
