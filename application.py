@@ -311,6 +311,8 @@ if __name__ == '__main__':
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
-    app.secret_key = 'secret_key'
+    app.secret_key = ''.join(random.choice(
+        string.ascii_uppercase + string.digits)
+                    for x in xrange(32))
     app.debug = True
     app.run(host='0.0.0.0', port=8000)
