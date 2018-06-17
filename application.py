@@ -313,4 +313,4 @@ if __name__ == '__main__':
     # httpd.serve_forever()
     app.secret_key = 'secret_key'
     app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port)
