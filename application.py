@@ -15,6 +15,8 @@ import os
 import BaseHTTPServer
 
 app = Flask(__name__)
+app.secret_key = 'secret_key'
+
 
 # Get credentials file for login
 CLIENT_ID = json.loads(
@@ -305,8 +307,6 @@ def catalogJSON():
 
 
 if __name__ == '__main__':
-    app.config['SESSION_TYPE'] = 'filesystem'
-    app.config['SECRET_KEY'] = os.urandom(24)
     app.debug = True
     app.run(host='0.0.0.0', port=8000)
     server_class = BaseHTTPServer.HTTPServer
