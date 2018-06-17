@@ -305,7 +305,8 @@ def catalogJSON():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'secret_key'
+    app.config['SESSION_TYPE'] = 'filesystem'
+    app.config['SECRET_KEY'] = os.urandom(24)
     app.debug = True
     app.run(host='0.0.0.0', port=8000)
     server_class = BaseHTTPServer.HTTPServer
@@ -314,4 +315,3 @@ if __name__ == '__main__':
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
-    
