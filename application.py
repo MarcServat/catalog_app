@@ -305,14 +305,13 @@ def catalogJSON():
 
 
 if __name__ == '__main__':
+    app.secret_key = 'secret_key'
+    app.debug = True
+    app.run(host='0.0.0.0', port=8000)
     server_class = BaseHTTPServer.HTTPServer
     handler_class = BaseHTTPServer.BaseHTTPRequestHandler
     port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
-    app.secret_key = ''.join(random.choice(
-        string.ascii_uppercase + string.digits)
-                    for x in xrange(32))
-    app.debug = True
-    app.run(host='0.0.0.0', port=8000)
+    
